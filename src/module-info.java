@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Data_Structures {
+module EstruturaDados {
 }
