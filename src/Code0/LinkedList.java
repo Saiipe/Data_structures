@@ -37,6 +37,16 @@ public class LinkedList<T> {
 		
 	}
 	
+	boolean listEmpty() {
+		
+		if(head == null && tail == null) {
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
+	
 	boolean haveNext() {
 		
 		if(head == null) {
@@ -51,6 +61,7 @@ public class LinkedList<T> {
 		}
 		
 	}
+	
 	void printList() {
 		current = head;
 		
@@ -75,5 +86,57 @@ public class LinkedList<T> {
 		}
 		return count;
 	}
+	
+	void clearList(T data) {
+		Node<T> current = head;
+		
+		while(current != null) {
+			Node<T> next = current.getNext();
+			current.setNext(null);
+			current = next;
+		}
+		
+		head = null;
+		tail = null;
+	}
+	
+	Node<T> penultimateNode(Node<T> node){
+		
+		if(node.getNext().equals(tail)) {
+			return node;
+		}else {
+			return penultimateNode(node.getNext());
+		}
+		
+	}
+	
+	void removeHead() {
+		if(head == null) {
+			System.out.println("The list is empty");
+			return;
+		}
+		head = head.getNext();
+		if(head == null) {
+			tail = null;
+			current =null;
+		}
+		
+	}
+	
+	void removeTail() {
+		current = head;
+		
+		if(current.getNext() != null) {
+			Node<T> node = penultimateNode(head);
+			tail = node;
+			tail.setNext(null);
+		}else {
+			System.out.println("The list is empty.");
+			head = null;
+			tail = null;
+			current = null;
+		}	
+	}
+	
 	
 }
