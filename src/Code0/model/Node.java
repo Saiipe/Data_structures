@@ -1,4 +1,4 @@
-package Code0;
+package Code0.model;
 
 public class Node<T> {
 

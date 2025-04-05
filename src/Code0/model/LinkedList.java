@@ -1,6 +1,8 @@
-package Code0;
+package Code0.model;
 
-public class LinkedList<T> {
+import Code0.interfaces.ILinkedList;
+
+public class LinkedList<T> implements ILinkedList<T>{
 
 	private Node<T> head;
 	private Node<T> tail;
@@ -10,7 +12,7 @@ public class LinkedList<T> {
 		return current;
 	}
 	
-	void addHead(T data) {
+	public void addHead(T data) {
 		Node<T> node = new Node<>();
 		node.setData(data);
 		if(head == null && tail == null) {
@@ -22,7 +24,7 @@ public class LinkedList<T> {
 		}
 	}
 	
-	void addTail(T data) {
+	public void addTail(T data) {
 		Node<T> node = new Node<>();
 		node.setData(data);
 	
@@ -37,7 +39,7 @@ public class LinkedList<T> {
 		
 	}
 	
-	boolean listEmpty() {
+	public boolean listEmpty() {
 		
 		if(head == null && tail == null) {
 			return true;
@@ -47,7 +49,7 @@ public class LinkedList<T> {
 		
 	}
 	
-	boolean haveNext() {
+	public boolean haveNext() {
 		
 		if(head == null) {
 			return false;
@@ -62,7 +64,7 @@ public class LinkedList<T> {
 		
 	}
 	
-	void printList() {
+	public void printList() {
 		current = head;
 		
 		System.out.println("START LIST");
@@ -75,7 +77,7 @@ public class LinkedList<T> {
 		System.out.println("END LIST");
 	}
 	
-	int sizeList() {
+	public int sizeList() {
 		current = head;
 		int count = 0;
 		
@@ -87,7 +89,7 @@ public class LinkedList<T> {
 		return count;
 	}
 	
-	void clearList(T data) {
+	public void clearList(T data) {
 		Node<T> current = head;
 		
 		while(current != null) {
@@ -100,7 +102,7 @@ public class LinkedList<T> {
 		tail = null;
 	}
 	
-	Node<T> penultimateNode(Node<T> node){
+	private Node<T> penultimateNode(Node<T> node){
 		
 		if(node.getNext().equals(tail)) {
 			return node;
@@ -110,7 +112,7 @@ public class LinkedList<T> {
 		
 	}
 	
-	void removeHead() {
+	public void removeHead() {
 		if(head == null) {
 			System.out.println("The list is empty");
 			return;
@@ -123,7 +125,7 @@ public class LinkedList<T> {
 		
 	}
 	
-	void removeTail() {
+	public void removeTail() {
 		current = head;
 		
 		if(current.getNext() != null) {
@@ -137,6 +139,20 @@ public class LinkedList<T> {
 			current = null;
 		}	
 	}
+	
+	Node<T> search(T data){
+		Node<T> current = head;
+		
+		while (current != null) {
+			if (current.getData().equals(data)) {
+				return current;
+			}
+			current = current.getNext();
+		}
+		
+		return null;
+	}
+	
 	
 	
 }
