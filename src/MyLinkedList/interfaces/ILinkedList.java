@@ -1,4 +1,4 @@
-package Code0.interfaces;
+package MyLinkedList.interfaces;
 
 public interface ILinkedList<T> {
 

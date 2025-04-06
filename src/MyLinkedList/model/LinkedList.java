@@ -1,6 +1,6 @@
-package Code0.model;
+package MyLinkedList.model;
 
-import Code0.interfaces.ILinkedList;
+import MyLinkedList.interfaces.ILinkedList;
 
 public class LinkedList<T> implements ILinkedList<T>{
 

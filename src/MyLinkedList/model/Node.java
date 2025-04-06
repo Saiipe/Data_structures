@@ -1,4 +1,4 @@
-package Code0.model;
+package MyLinkedList.model;
 
 public class Node<T> {
 

@@ -1,6 +1,6 @@
-package Code0.view;
+package MyLinkedList.view;
 
-import Code0.model.LinkedList;
+import MyLinkedList.model.LinkedList;
 
 public class Main {
 
