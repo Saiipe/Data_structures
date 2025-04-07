@@ -5,7 +5,7 @@ public class DoubleLinkedList<T> {
 	private	Node<T> head;
 	private Node<T> tail;
 	private Node<T> current;
-	private int Cont = 0;
+	private int cont = 0;
 	
 	public void addHead(T data) {
 		Node<T> node = new Node<>();
@@ -16,11 +16,11 @@ public class DoubleLinkedList<T> {
 			tail = node;
 		}else {
 			node.setNext(head);
+			node.setPrevious(null);
 			head.setPrevious(node);
 			head = node;
 		}
-		
-		
+		cont++;
 	}
 	
 	
