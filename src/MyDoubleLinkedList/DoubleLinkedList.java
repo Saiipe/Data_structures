@@ -23,6 +23,36 @@ public class DoubleLinkedList<T> {
 		cont++;
 	}
 	
+	public void addTail(T data) {
+		Node <T> node = new Node<>();
+		node.setDado(data);
+		
+		if(head == null && tail == null) {
+			head = node;
+			tail = node;
+		}else {
+			tail.setNext(node);
+			node.setPrevious(tail);
+			node.setNext(null);
+			tail = node;
+		}
+		cont++;
+	}
 	
+	public void removeTail() {
+		
+		
+	}
+	
+	public Node<T> getPenultimate(Node<T> node) {
+		
+		if(node.getNext().equals(tail)) {
+			return node;
+		}else {
+			return getPenultimate(node.getNext());
+		}
+		
+		
+	}
 	
 }
