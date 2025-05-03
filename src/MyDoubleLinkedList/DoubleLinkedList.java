@@ -38,9 +38,13 @@ public class DoubleLinkedList<T> {
 		}
 		cont++;
 	}
-	
+	// in progress... 
 	public void removeTail() {
+		current = head;
 		
+		if(current != null && current.getNext() != null) {
+			Node<T> node = getPenultimate(head);
+		}
 		
 	}
 	
